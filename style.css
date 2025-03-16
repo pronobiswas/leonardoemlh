@@ -20,6 +20,10 @@ h2 {
   font-weight: 700;
 }
 
+p {
+  font-size: 14px;
+}
+
 button {
   border: none;
   outline: none;
@@ -30,6 +34,41 @@ button {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.item_warpper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.item_warpper .itemImage {
+  width: 100px;
+  height: 100px;
+  background-color: #00A899;
+  border-radius: 50%;
+}
+.item_warpper .temContent h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.item_warpper .count {
+  display: flex;
+  gap: 5px;
+}
+.item_warpper .count .result {
+  padding: 2px 8px;
+  border: 1px solid var(--praimary);
+  border-radius: 5px;
+}
+.item_warpper .count button {
+  background-color: red;
+  padding: 1px 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 header nav {
@@ -158,4 +197,17 @@ header nav .blank {
 #contentWarpper .rightSection {
   width: 40%;
   background-color: #00A899;
+}
+.commonItems {
+  padding: 40px 20px;
+}
+.commonItems .cardWarpper {
+  width: 70%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.commonItems .cardWarpper .productCard {
+  width: 48%;
 }/*# sourceMappingURL=style.css.map */

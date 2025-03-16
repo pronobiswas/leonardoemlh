@@ -18,6 +18,9 @@ h2{
     font-size: 22px;
     font-weight: 700;
 }
+p{
+    font-size: 14px;
+}
 button{
     border: none;
     outline: none;
@@ -28,6 +31,45 @@ button{
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+}
+.item_warpper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    .itemImage{
+        width: 100px;
+        height: 100px;
+        background-color: #00A899;
+        border-radius: 50%;
+    }
+    .temContent{
+        h3{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .dimention{}
+        .price{}
+    }
+    .count{
+        display: flex;
+        gap: 5px;
+        .result{
+            padding: 2px 8px;
+            border: 1px solid var(--praimary);
+            border-radius: 5px;
+        }
+
+        button{
+            background-color: red;
+            padding: 1px 6px;
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
 }
 
 header {
@@ -179,6 +221,20 @@ header {
         background-color: #00A899;
         .content{
             
+        }
+    }
+}
+.commonItems{
+    padding: 40px 20px;
+    .cardWarpper{
+        width: 70%;
+        margin-top: 20px;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        .productCard{
+            width: 48%;
         }
     }
 }
