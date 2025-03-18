@@ -22,23 +22,23 @@
                 <img src="./assets/LOGO FOR Check out.svg" alt="logo" width="160">
             </div>
             <div class="box_warpper">
-                <div class="box">
+                <div class="box" id="boxOne">
                     <div class="miniBox"></div>
                 </div>
                 <div class="line"></div>
-                <div class="box">
+                <div class="box" id="boxTwo">
                     <!-- <div class="miniBox"></div> -->
                 </div>
                 <div class="line"></div>
-                <div class="box">
+                <div class="box" id="boxThree">
                     <!-- <div class="miniBox"></div> -->
                 </div>
                 <div class="line"></div>
-                <div class="box">
+                <div class="box" id="boxFour">
                     <!-- <div class="miniBox"></div> -->
                 </div>
                 <div class="line"></div>
-                <div class="box">
+                <div class="box" id="boxLast">
                     <!-- <div class="miniBox"></div> -->
                 </div>
             </div>
@@ -97,12 +97,43 @@
                 </aside>
                 <aside class="rightSection">
                     <div class="content" id="productSummary">
-                        <h3> Due now - upfront payment</h3>
+                        <!-- <h3> Due now - upfront payment</h3>
                         <h4>Lorem ipsum dolor sit amet.</h4>
                         <div class="summaryWarper">
                             <div class="justify_betwen">
                                 <p>Lorem, ipsum.</p>
                                 <button>remo </button>
+                            </div>
+                        </div> -->
+
+                        <div class="warpperRight">
+                            <div class="product_Sumary">
+                                <h4>Due now - upfront payment</h4>
+                                <div class="editCont">
+                                    <h4>Storage per month</h4> 
+                                    <button id="editCount"> Edit</button>
+                                </div>
+                                <div class="itemdetails">
+                                    <div class="wrap">
+                                        <button>▼</button><span>10 items</span>
+                                    </div>
+                                    $99.25 / mo
+                                </div>
+                                <div class="totalAmount">
+                                    <span>total due today</span>
+                                    <span>$99.25</span>
+                                </div>
+            
+                                <div class="returnCase">
+                                    <p><span>▼</span>Return charges apply</p>
+                                </div>
+                                <p>
+                                    Delivery fees are charged when you order your stuff back, <a href="#">find out more here</a>.
+                                </p>
+                                <div class="summary_note">
+                                    <p>FREE to cancel or amend your order if you let us know before 11am one working day prior to your collection or delivery.</p>
+                                </div>
+            
                             </div>
                         </div>
     
@@ -241,10 +272,16 @@
                 </div>
                 <button class="customItemBtn">Add custom item</button>
             </div>
+
+            <div class="btnWrper container">
+                <button id="continueBtn">continue</button>
+            </div>
         </section>
+
+        
     </div>
     <!-- ======second phase====== -->
-     <section id="secondPhase">
+     <section id="secondPhase" class="hidden">
         <div class="container">
 
             <aside class="secondPhaseLeft">
@@ -253,52 +290,54 @@
                     <form>
                         <input type="text" id="" name="" placeholder="Start typeing and select your address">
                         <!-- ===hidden fild=== -->
-                        <div class="hiddenfild">
-                            <!-- ===name=== -->
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="First name *" required>
-                                    <span class="requires"></span>
-                                </div>
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="Last name *" required>
-                                    <span class="requires"></span>
-                                </div>
-                            </div>
-                            <!-- ===address=== -->
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="Bulding number/name *" required>
-                                    <span class="requires"></span>
-                                </div>
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="Address line 1 *" required>
-                                    <span class="requires"></span>
-                                </div>
-                            </div>
-                            <!-- ===address=== -->
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="Address line 2 *" required>
-                                    <span class="requires"></span>
-                                </div>
-                                <div class="col">
-                                    <input type="text" id="" name="" placeholder="Town *" required>
-                                    <span class="requires"></span>
-                                </div>
-                            </div>
-                            <input type="text" id="" name="" placeholder="Postcode *" required>
-                            <textarea name="" id="" placeholder="Special instructions" cols="75" rows="4">
-
-                            </textarea>
-                        </div>
+                         <div id="hiddenFildWarper">
+                             <div class="hiddenfild">
+                                 <!-- ===name=== -->
+                                 <div class="row">
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="First name *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="Last name *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                 </div>
+                                 <!-- ===address=== -->
+                                 <div class="row">
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="Bulding number/name *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="Address line 1 *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                 </div>
+                                 <!-- ===address=== -->
+                                 <div class="row">
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="Address line 2 *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                     <div class="col">
+                                         <input type="text" id="" name="" placeholder="Town *" required>
+                                         <span class="requires"></span>
+                                     </div>
+                                 </div>
+                                 <input type="text" id="" name="" placeholder="Postcode *" required>
+                                 <textarea name="" id="" placeholder="Special instructions" cols="75" rows="4">
+     
+                                 </textarea>
+                             </div>
+                         </div>
                     </form>
                     <p>
-                        Or <span>enter manually</span>
+                        Or <span id="showForm">enter manually</span>
                     </p>
 
                     <br>
-                    <button class="continue">Continue</button>
+                    <button class="continue" id="continue2ndPhase">Continue</button>
                 </div>
             </aside>
 
@@ -338,11 +377,195 @@
 
         </div>
      </section>
+     <!-- =====third phase====== -->
+      <section id="thirdPhase" class="hidden" >
+        <div class="container">
+            <div class="picupWarpper">
+                <aside class="leftside">
+                    <div class="heading">
+                        <img src="./assets/pngtree-group5.png" alt="png" width="120px">
+                        <h3>Pickup Appointment</h3>
+                        <p>This is when w pickup your items</p>
+                    </div>
+                    <div class="leftsideWarpper"> 
+                        <div class="picupDate">
+                                <div class="calendar">
+                                    <div class="month-nav">
+                                        <span>&#10094;</span> 
+                                        <span>March 2025</span> 
+                                        <span>&#10095;</span>
+                                    </div>
+                                    <div class="days">
+                                        <div class="day">Mon</div>
+                                        <div class="day">Tue</div>
+                                        <div class="day">Wed</div>
+                                        <div class="day">Thu</div>
+                                        <div class="day">Fri</div>
+                                        <div class="day">Sat</div>
+                                        <div class="day">Sun</div>
+
+                                        <div class="day">24</div>
+                                        <div class="day">25</div>
+                                        <div class="day">26</div>
+                                        <div class="day">27</div>
+                                        <div class="day">28</div>
+                                        <div class="day">1</div>
+                                        <div class="day">2</div>
+                                        <div class="day">3</div>
+                                        <div class="day">4</div>
+                                        <div class="day">5</div>
+                                        <div class="day">6</div>
+                                        <div class="day">7</div>
+                                        <div class="day">8</div>
+                                        <div class="day">9</div>
+                                        <div class="day">10</div>
+                                        <div class="day ">11</div>
+                                        <div class="day free">12<span>FREE</span></div>
+                                        <div class="day free">13 <span>FREE</span></div>
+                                        <div class="day free">14 <span>FREE</span></div>
+                                        <div class="day free">15 <span>FREE</span></div>
+                                        <div class="day paid">16 <span>$9</span></div>
+                                        <div class="day ">17</div>
+                                        <div class="day ">18</div>
+                                        <div class="day free">19 <span>FREE</span></div>
+                                        <div class="day free">20 <span>FREE</span></div>
+                                        <div class="day free">21 <span>FREE</span></div>
+                                        <div class="day free">22 <span>FREE</span></div>
+                                        <div class="day paid">23 <span>$9</span></div>
+                                        <div class="day ">24 </div>
+                                        <div class="day ">25 </div>
+                                        <div class="day free">26 <span>FREE</span></div>
+                                        <div class="day free">27 <span>FREE</span></div>
+                                        <div class="day free">28 <span>FREE</span></div>
+                                        <div class="day free">29 <span>FREE</span></div>
+                                        <div class="day paid">30 <span>$9</span></div>
+                                        <div class="day available">31 <span>FREE</span></div>
+                                        <div class="day">1</div>
+                                        <div class="day">2</div>
+                                        <div class="day">3</div>
+                                        <div class="day">4</div>
+                                        <div class="day">5</div>
+                                        <div class="day">6</div>
+                            
+                                    </div>
+                            
+                                    <button class="continue-btn">Continue</button>
+                                </div>
+                        </div>
+                        <div class="arivalWindow">
+                            <div class="arivalWarper">
+                                <h3>Select an arrival winow</h3>
+                                <div class="flexibleWimdow arrivalBox">
+                                    <div class="boxHeading">
+                                        <h4>Flexible Arrival</h4>
+                                        <span>Free</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reiciendis voluptatem beatae nulla optio ab eveniet eligendi.</p>
+                                </div>
+                                <div class="arrivalBox">
+                                    <div class="boxHeading">
+                                        <h4>Flexible Arrival</h4>
+                                        <span>$29</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="scheduleWarpper">
+                                    <ol>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        <li class="schedule">07:00 - 18:00</li>
+                                        
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <aside class="rightSide">
+                    <div class="warpperRight">
+                        <div class="product_Sumary">
+                            <h4>Due now - upfront payment</h4>
+                            <div class="editCont">
+                                <h4>Storage per month</h4> 
+                                <button id="editCount"> Edit</button>
+                            </div>
+                            <div class="itemdetails">
+                                <div class="wrap">
+                                    <button>▼</button><span>10 items</span>
+                                </div>
+                                $99.25 / mo
+                            </div>
+                            <div class="totalAmount">
+                                <span>total due today</span>
+                                <span>$99.25</span>
+                            </div>
+        
+                            <div class="returnCase">
+                                <p><span>▼</span>Return charges apply</p>
+                            </div>
+                            <p>
+                                Delivery fees are charged when you order your stuff back, <a href="#">find out more here</a>.
+                            </p>
+                            <div class="summary_note">
+                                <p>FREE to cancel or amend your order if you let us know before 11am one working day prior to your collection or delivery.</p>
+                            </div>
+        
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+      </section>
 
      <!-- =====fixed button======= -->
+     <!-- =====fixed button======= -->
+     <!-- =====fixed button======= -->
       <section id="button_fixed">
+        <div class="pullDown " id="fullScreenSummary">
+
+            <aside class="secondPhaseRight" >
+                <div class="warpperRight">
+                    <div class="product_Sumary">
+                        <h4>Due now - upfront payment</h4>
+                        <div class="editCont">
+                            <h4>Storage per month</h4> 
+                            <button id="editCount"> Edit</button>
+                        </div>
+                        <div class="itemdetails">
+                            <div class="wrap">
+                                <button>▼</button><span>10 items</span>
+                            </div>
+                            $99.25 / mo
+                        </div>
+                        <div class="totalAmount">
+                            <span>total due today</span>
+                            <span>$99.25</span>
+                        </div>
+    
+                        <div class="returnCase">
+                            <p><span>▼</span>Return charges apply</p>
+                        </div>
+                        <p>
+                            Delivery fees are charged when you order your stuff back, <a href="#">find out more here</a>.
+                        </p>
+                        <div class="summary_note">
+                            <p>FREE to cancel or amend your order if you let us know before 11am one working day prior to your collection or delivery.</p>
+                        </div>
+    
+                    </div>
+                </div>
+            </aside>
+            
+        </div>
         <div class="dropdown_middle">
-            <span><svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 -960 960 960" width="44px" fill="#000000"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></span>
+            <div id="dropdownbutton" class="rotateReverse"><svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 -960 960 960" width="44px" fill="#000000"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></div>
         </div>
         <div class="fixedWarper">
             <div class="due">

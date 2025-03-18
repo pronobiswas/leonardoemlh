@@ -10,6 +10,10 @@
   font-family: "Manrope", sans-serif;
 }
 
+body {
+  padding-bottom: 100px;
+}
+
 h1 {
   font-size: 28px;
   font-weight: 700;
@@ -24,6 +28,10 @@ p {
   font-size: 14px;
 }
 
+ol, ul {
+  list-style-type: none;
+}
+
 button {
   border: none;
   outline: none;
@@ -36,10 +44,67 @@ button {
   padding: 0 20px;
 }
 
-body {
-  cursor: none;
+.showPuldown {
+  display: block !important;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.warpperRight {
+  width: 100%;
+  max-width: 455px;
+  padding: 25px;
+  background-color: rgba(93, 255, 241, 0.1843137255);
+  border-radius: 10px;
+}
+.warpperRight .product_Sumary {
+  background: transparent;
+}
+.warpperRight .product_Sumary .editCont {
+  margin: 10px 0 8px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.warpperRight .product_Sumary .editCont #editCount {
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--praimary);
+}
+.warpperRight .product_Sumary .itemdetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  padding: 10px 0;
+}
+.warpperRight .product_Sumary .totalAmount {
+  display: flex;
+  justify-content: space-between;
+}
+.warpperRight .product_Sumary .returnCase {
+  padding: 10px 0;
+}
+.warpperRight .product_Sumary p a {
+  color: var(--praimary);
+}
+.warpperRight .product_Sumary .summary_note {
+  background-color: rgba(0, 81, 87, 0.3411764706);
+  border-radius: 4px;
+  padding: 15px 10px;
+  margin-top: 10px;
+}
+
+/* Custom Cursor */
+/* Custom Cursor */
+/* Custom Cursor */
 /* Custom Cursor */
 .custom-cursor {
   position: fixed;
@@ -56,7 +121,6 @@ body {
 
 /* Cursor Effect on Hovering Button */
 button:hover ~ .custom-cursor {
-  background-color: red;
   transform: scale(1.5);
 }
 
@@ -93,6 +157,16 @@ button:hover ~ .custom-cursor {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg) !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotateReverse {
+  transform: rotate(360deg) !important;
+  transition: transform 0.3s ease-in-out;
 }
 
 header nav {
@@ -157,9 +231,6 @@ header nav .blank {
   width: 20%;
 }
 
-#firstPhase {
-  display: none;
-}
 #firstPhase .buildPlan h1 {
   font-size: 28px;
   padding: 10px 0;
@@ -202,7 +273,6 @@ header nav .blank {
   background-color: #00A899;
 }
 #firstPhase .commonItems {
-  display: none;
   padding: 40px 20px;
 }
 #firstPhase .commonItems .cardWarpper {
@@ -214,6 +284,17 @@ header nav .blank {
 }
 #firstPhase .commonItems .cardWarpper .productCard {
   width: 48%;
+}
+#firstPhase .btnWrper {
+  padding-top: 50px;
+}
+#firstPhase .btnWrper #continueBtn {
+  padding: 10px 32px;
+  cursor: pointer;
+}
+#firstPhase .btnWrper #continueBtn:hover {
+  background: var(--praimary);
+  color: #fff;
 }
 #firstPhase .Mattresses .warpper {
   width: 100%;
@@ -352,19 +433,33 @@ header nav .blank {
   border: 1px solid var(--lightGray);
   outline: 2px solid #b1b1b1;
 }
-#secondPhase .container .secondPhaseLeft .formWarper form .hiddenfild {
+#secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper {
+  display: none;
+}
+#secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-#secondPhase .container .secondPhaseLeft .formWarper form .hiddenfild .row {
+#secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row {
   width: 100%;
   display: flex;
   gap: 20px;
 }
-#secondPhase .container .secondPhaseLeft .formWarper form .hiddenfild .row .col {
+#secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row .col {
   width: 50%;
+}
+#secondPhase .container .secondPhaseLeft .formWarper p {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+#secondPhase .container .secondPhaseLeft .formWarper p span {
+  text-decoration: underline;
+}
+#secondPhase .container .secondPhaseLeft .formWarper p span:hover {
+  color: var(--praimary);
 }
 #secondPhase .container .secondPhaseLeft .continue {
   padding: 6px 20px;
@@ -377,7 +472,9 @@ header nav .blank {
   color: white;
 }
 #secondPhase .container .secondPhaseRight {
-  width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  display: none;
 }
 #secondPhase .container .secondPhaseRight .warpperRight {
   width: 100%;
@@ -429,7 +526,158 @@ header nav .blank {
   margin-top: 10px;
 }
 
+#thirdPhase {
+  width: 100%;
+  padding: 20px 0;
+}
+#thirdPhase .container .picupWarpper {
+  width: 100%;
+  display: flex;
+}
+#thirdPhase .container .picupWarpper .leftside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#thirdPhase .container .picupWarpper .leftside .heading {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
+  display: flex;
+  gap: 50px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar {
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: teal;
+  margin-bottom: 10px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #aaa;
+  font-size: 14px;
+  flex-direction: column;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available {
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #005157;
+  background-color: var(--praimary);
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available span {
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free {
+  color: var(--lightGray);
+  font-weight: bold;
+  border: 2px solid var(--lightGray);
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover {
+  background-color: var(--praimary);
+  border-color: var(--praimary);
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover span {
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid {
+  border: 2px solid black;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover {
+  background-color: #005157;
+  border-color: var(--praimary);
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover span {
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day span {
+  font-size: 12px;
+  color: gray;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #ccc;
+  color: white;
+  font-size: 16px;
+  cursor: not-allowed;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn:hover {
+  background-color: var(--praimary);
+  color: #fff;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border: 2px solid var(--lightGray);
+  border-radius: 10px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+  color: var(--praimary);
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox p {
+  font-size: 14px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox:hover {
+  border: 2px solid var(--praimary);
+  color: var(--praimary);
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol li {
+  background-color: var(--praimary);
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 700;
+}
 #button_fixed {
+  display: block;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -462,6 +710,66 @@ header nav .blank {
 }
 #button_fixed .fixedWarper .continue {
   padding: 8px 12px;
+}
+#button_fixed .pullDown {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  background-color: #7ae7d5;
+}
+#button_fixed .pullDown .secondPhaseRight {
+  width: 100%;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight {
+  width: 100%;
+  padding: 25px;
+  background-color: rgba(93, 255, 241, 0.1843137255);
+  border-radius: 10px;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary {
+  background: transparent;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont {
+  margin: 10px 0 8px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont #editCount {
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--praimary);
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .itemdetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  padding: 10px 0;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .totalAmount {
+  display: flex;
+  justify-content: space-between;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .returnCase {
+  padding: 10px 0;
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary p a {
+  color: var(--praimary);
+}
+#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .summary_note {
+  background-color: rgba(0, 81, 87, 0.3411764706);
+  border-radius: 4px;
+  padding: 15px 10px;
+  margin-top: 10px;
 }
 
 /* Extra Small Devices (Phones) */
@@ -555,6 +863,10 @@ header nav .blank {
     display: none;
     width: 20%;
   }
+  .item_warpper {
+    display: flex;
+    flex-wrap: wrap;
+  }
   #firstPhase main .buildPlan {
     margin-bottom: 20px;
   }
@@ -564,12 +876,319 @@ header nav .blank {
   #firstPhase main #contentWarpper .rightSection {
     display: none;
   }
-  .item_warpper {
+  #firstPhase .commonItems .cardWarpper {
+    width: 100%;
+  }
+  #firstPhase .commonItems .cardWarpper .productCard {
+    width: 100%;
+  }
+  #secondPhase .container {
+    display: flex;
+    gap: 20px;
+  }
+  #secondPhase .container .secondPhaseLeft {
+    width: 100%;
+  }
+  #secondPhase .container .secondPhaseLeft h3 {
+    margin-bottom: 10px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--lightGray);
+    outline: 2px solid transparent;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form input:focus {
+    border: 1px solid var(--lightGray);
+    outline: 2px solid #b1b1b1;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper {
+    display: none;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row .col {
+    width: 50%;
+  }
+  #secondPhase .container .secondPhaseLeft .continue {
+    padding: 6px 20px;
+    background-color: var(--praimary);
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  #secondPhase .container .secondPhaseLeft .continue:hover {
+    background-color: #01c0a0;
+    color: white;
+  }
+  #secondPhase .container .secondPhaseRight {
+    display: none;
+  }
+  #secondPhase .container #button_fixed {
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #6dafa4;
+    padding: 20px;
+  }
+  #secondPhase .container #button_fixed .dropdown_middle {
+    padding: 0 5%;
+    background-color: #6dafa4;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  #secondPhase .container #button_fixed .fixedWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #secondPhase .container #button_fixed .fixedWarper .due {
+    display: flex;
+    flex-direction: column;
+  }
+  #secondPhase .container #button_fixed .fixedWarper .due .price {
+    font-weight: 800;
+  }
+  #secondPhase .container #button_fixed .fixedWarper .continue {
+    padding: 8px 12px;
+  }
+  #secondPhase .container #button_fixed .pullDown {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: #7ae7d5;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight {
+    width: 100%;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight {
+    width: 100%;
+    padding: 25px;
+    background-color: rgba(93, 255, 241, 0.1843137255);
+    border-radius: 10px;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary {
+    background: transparent;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont {
+    margin: 10px 0 8px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont #editCount {
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--praimary);
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .itemdetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 10px 0;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .totalAmount {
+    display: flex;
+    justify-content: space-between;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .returnCase {
+    padding: 10px 0;
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary p a {
+    color: var(--praimary);
+  }
+  #secondPhase .container #button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .summary_note {
+    background-color: rgba(0, 81, 87, 0.3411764706);
+    border-radius: 4px;
+    padding: 15px 10px;
+    margin-top: 10px;
+  }
+  #thirdPhase {
+    width: 100%;
+    padding: 20px 0;
+  }
+  #thirdPhase .container .picupWarpper .leftside .heading {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar {
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-bottom: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #aaa;
+    font-size: 14px;
+    flex-direction: column;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available {
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #005157;
+    background-color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free {
+    color: var(--lightGray);
+    font-weight: bold;
+    border: 2px solid var(--lightGray);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover {
+    background-color: var(--praimary);
+    border-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid {
+    border: 2px solid black;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover {
+    background-color: #005157;
+    border-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day span {
+    font-size: 12px;
+    color: gray;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #ccc;
+    color: white;
+    font-size: 16px;
+    cursor: not-allowed;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn:hover {
+    background-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow {
+    padding: 0 20px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+    color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox p {
+    font-size: 14px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol li {
+    background-color: var(--praimary);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  #thirdPhase .container .picupWarpper .rightSide {
+    display: none;
   }
 }
 /* Small Devices (Tablets, Large Phones) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .secondPhaseLeft {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
 /* Medium Devices (Small Laptops, Tablets in Landscape) */
 @media (min-width: 769px) and (max-width: 992px) {
   .item_warpper {
@@ -606,8 +1225,21 @@ header nav .blank {
     border-radius: 5px;
     cursor: pointer;
   }
+  .secondPhaseLeft {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 /* Large Devices (Desktops, Laptops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .secondPhaseRight {
+    display: block !important;
+  }
+  #button_fixed {
+    display: none;
+  }
+}
 /* Extra Large Devices (Large Screens, TV) */
 @media (min-width: 1201px) {
   #firstPhase .buildPlan h1 {
@@ -774,5 +1406,121 @@ header nav .blank {
   }
   #firstPhase #CustomItems .CustomItem .customItemBtn:hover {
     box-shadow: 0px -3px 8px 2px rgb(0, 81, 87);
+  }
+  #secondPhase {
+    width: 100%;
+    padding: 50px 0;
+  }
+  #secondPhase .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  #secondPhase .container .secondPhaseLeft {
+    width: 100%;
+    max-width: 600px;
+  }
+  #secondPhase .container .secondPhaseLeft h3 {
+    margin-bottom: 10px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--lightGray);
+    outline: 2px solid transparent;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form input:focus {
+    border: 1px solid var(--lightGray);
+    outline: 2px solid #b1b1b1;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper {
+    display: none;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+  #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper .hiddenfild .row .col {
+    width: 50%;
+  }
+  #secondPhase .container .secondPhaseLeft .continue {
+    padding: 6px 20px;
+    background-color: var(--praimary);
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  #secondPhase .container .secondPhaseLeft .continue:hover {
+    background-color: #01c0a0;
+    color: white;
+  }
+  #secondPhase .container .secondPhaseRight {
+    width: -moz-max-content;
+    width: max-content;
+    display: block;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight {
+    width: 100%;
+    max-width: 455px;
+    padding: 25px;
+    background-color: rgba(93, 255, 241, 0.1843137255);
+    border-radius: 10px;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary {
+    background: transparent;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .editCont {
+    margin: 10px 0 8px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .editCont #editCount {
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--praimary);
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .itemdetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 10px 0;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .totalAmount {
+    display: flex;
+    justify-content: space-between;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .returnCase {
+    padding: 10px 0;
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary p a {
+    color: var(--praimary);
+  }
+  #secondPhase .container .secondPhaseRight .warpperRight .product_Sumary .summary_note {
+    background-color: rgba(0, 81, 87, 0.3411764706);
+    border-radius: 4px;
+    padding: 15px 10px;
+    margin-top: 10px;
+  }
+  #button_fixed {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
