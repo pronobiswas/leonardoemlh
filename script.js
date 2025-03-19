@@ -7,10 +7,13 @@ const dropdown_middle = document.querySelector(".dropdown_middle");
 const box = document.querySelector(".dropdown_middle");
 const continueBtn1 = document.getElementById("continueBtn");
 const continue2ndPhase = document.getElementById("continue2ndPhase");
+const continue3rdPhase = document.getElementById("pickUpBtn");
+const packegingContinue = document.getElementById("packegingContinue");
 // ----phase----
 const firstPhase = document.getElementById("firstPhase");
 const secondPhase = document.getElementById("secondPhase");
 const thirdPhase = document.getElementById("thirdPhase");
+const fourthPhase = document.getElementById("fourthPhase");
 // ====secondphase====
 const hiddenFildWarper = document.querySelector("#hiddenFildWarper");
 const showForm = document.getElementById("showForm");
@@ -82,6 +85,7 @@ fetch('https://dummyjson.com/products')
                         console.log(item);
                         
                     })
+                    console.log(selectedProduct);
                     
                     
                 }else{
@@ -105,7 +109,6 @@ fetch('https://dummyjson.com/products')
 
 
     // =====work with next button====
-
     document.addEventListener("DOMContentLoaded", function () {
         const continueBtn1 = document.getElementById("continueBtn");
         const continue2ndPhase = document.getElementById("continue2ndPhase");
@@ -138,7 +141,15 @@ fetch('https://dummyjson.com/products')
             // Move the miniBox from second box to the third box
             moveMiniBox(1, 2);
         });
-    
+        continue3rdPhase.addEventListener('click' , ()=>{
+            console.log("third button clicked");
+            firstPhase.classList.add("hidden");
+            secondPhase.classList.add("hidden");
+            thirdPhase.classList.add("hidden");
+            fourthPhase.classList.remove("hidden");
+            moveMiniBox(2, 3);
+        });
+    // ======Move the miniBox from one box to the anothe box=======
         function moveMiniBox(fromIndex, toIndex) {
             let existingMiniBox = boxes[fromIndex].querySelector(".miniBox");
             if (existingMiniBox) {
@@ -150,6 +161,28 @@ fetch('https://dummyjson.com/products')
             boxes[toIndex].appendChild(newMiniBox);
         }
     });
+    // ====handlePicUpBtn  third section=====
+     function handlePicupBtn (){
+        console.log("pickup");
+        
+     }
+    // ======fourth section======
+    const packagingBox = document.querySelectorAll(".packagingBox")
+    packagingBox.forEach((perBox)=>{
+        perBox.addEventListener('click', ()=>{
+            packagingBox.forEach((box) => box.classList.remove("active"));
+            perBox.classList.add("active")
+        })
+    });
+    packagingBox[0].addEventListener('click', ()=>{
+        document.querySelector(".supplyApointment").style.display = "block";
+        document.getElementById('packegingContinue').classList.add("hidden");
+    });
+    packagingBox[1].addEventListener('click', ()=>{
+        document.querySelector(".supplyApointment").style.display = "none";
+        document.getElementById('packegingContinue').classList.remove("hidden");
+    });
+    
         
         
         
@@ -223,6 +256,7 @@ showForm.addEventListener('click' , ()=>{
 
 // ====pulldown======
 dropdownbutton.addEventListener('click', ()=>{
+    
     fullScreenSummary.classList.toggle("showPuldown");
     dropdownbutton.classList.toggle("rotate");
     //  Toggle the rotation classes correctly
@@ -234,6 +268,8 @@ dropdownbutton.addEventListener('click', ()=>{
         dropdownbutton.classList.add("rotateReverse");
     }
     
+    
+
     
 })
 

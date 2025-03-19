@@ -28,13 +28,25 @@ p {
   font-size: 14px;
 }
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
 }
 
 button {
   border: none;
   outline: none;
+}
+
+.continueBtn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px 42px;
+  cursor: pointer;
+}
+.continueBtn:hover {
+  background-color: var(--praimary);
+  color: #fff;
 }
 
 .container {
@@ -102,6 +114,137 @@ button {
   margin-top: 10px;
 }
 
+.calenderSegment {
+  display: flex;
+  gap: 50px;
+}
+.calenderSegment .picupDate .calendar {
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.calenderSegment .picupDate .calendar .month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: teal;
+  margin-bottom: 10px;
+}
+.calenderSegment .picupDate .calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+.calenderSegment .picupDate .calendar .days .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #aaa;
+  font-size: 14px;
+  flex-direction: column;
+}
+.calenderSegment .picupDate .calendar .days .day.available {
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #005157;
+  background-color: var(--praimary);
+}
+.calenderSegment .picupDate .calendar .days .day.available span {
+  color: #fff;
+}
+.calenderSegment .picupDate .calendar .days .day.free {
+  color: var(--lightGray);
+  font-weight: bold;
+  border: 2px solid var(--lightGray);
+}
+.calenderSegment .picupDate .calendar .days .day.free:hover {
+  background-color: var(--praimary);
+  border-color: var(--praimary);
+  color: #fff;
+}
+.calenderSegment .picupDate .calendar .days .day.free:hover span {
+  color: #fff;
+}
+.calenderSegment .picupDate .calendar .days .day.paid {
+  border: 2px solid black;
+}
+.calenderSegment .picupDate .calendar .days .day.paid:hover {
+  background-color: #005157;
+  border-color: var(--praimary);
+  color: #fff;
+}
+.calenderSegment .picupDate .calendar .days .day.paid:hover span {
+  color: #fff;
+}
+.calenderSegment .picupDate .calendar .days .day span {
+  font-size: 12px;
+  color: gray;
+}
+.calenderSegment .picupDate .calendar .continue-btn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #ccc;
+  color: white;
+  font-size: 16px;
+  cursor: not-allowed;
+}
+.calenderSegment .picupDate .calendar .continue-btn:hover {
+  background-color: var(--praimary);
+  color: #fff;
+}
+.calenderSegment .arivalWindow .arivalWarper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.calenderSegment .arivalWindow .arivalWarper .arrivalBox {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border: 2px solid var(--lightGray);
+  border-radius: 10px;
+}
+.calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+  color: var(--praimary);
+}
+.calenderSegment .arivalWindow .arivalWarper .arrivalBox p {
+  font-size: 14px;
+}
+.calenderSegment .arivalWindow .arivalWarper .arrivalBox:hover {
+  border: 2px solid var(--praimary);
+  color: var(--praimary);
+}
+.calenderSegment .scheduleWarpper ol {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.calenderSegment .scheduleWarpper ol li {
+  background-color: var(--praimary);
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
 /* Custom Cursor */
 /* Custom Cursor */
 /* Custom Cursor */
@@ -110,9 +253,11 @@ button {
   position: fixed;
   width: 20px;
   height: 20px;
-  background-color: #005157; /* Custom color */
+  background-color: #005157;
+  /* Custom color */
   border-radius: 50%;
-  pointer-events: none; /* Prevents interaction */
+  pointer-events: none;
+  /* Prevents interaction */
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease-out;
   outline: 2px solid #005157;
@@ -160,12 +305,12 @@ button:hover ~ .custom-cursor {
 }
 
 .rotate {
-  transform: rotate(180deg) !important;
+  transform: rotate(-180deg) !important;
   transition: transform 0.3s ease-in-out;
 }
 
 .rotateReverse {
-  transform: rotate(360deg) !important;
+  transform: rotate(-360deg) !important;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -231,6 +376,9 @@ header nav .blank {
   width: 20%;
 }
 
+#firstPhase {
+  display: none;
+}
 #firstPhase .buildPlan h1 {
   font-size: 28px;
   padding: 10px 0;
@@ -407,6 +555,9 @@ header nav .blank {
   box-shadow: 0px -3px 8px 2px rgb(0, 81, 87);
 }
 
+#secondPhase {
+  display: none;
+}
 #secondPhase .container {
   display: flex;
   gap: 20px;
@@ -527,6 +678,7 @@ header nav .blank {
 }
 
 #thirdPhase {
+  display: none;
   width: 100%;
   padding: 20px 0;
 }
@@ -676,6 +828,144 @@ header nav .blank {
   color: #fff;
   font-weight: 700;
 }
+#thirdPhase .container .picupWarpper .rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fourthPhase {
+  display: none;
+  padding: 40px 0;
+}
+#fourthPhase .meterial .meterialWarpper {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft {
+  width: 70%;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .heading {
+  margin-bottom: 30px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .heading p {
+  margin-top: 10px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .active {
+  background-color: var(--praimary);
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+  width: 100%;
+  border: 1px solid var(--lightGray);
+  padding: 30px 50px;
+  text-align: center;
+  box-shadow: 2px 1px 4px 1px var(--lightGray);
+  transition: 0.1s all linear;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+  margin-bottom: 10px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+  background-color: var(--praimary);
+  color: white;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+  margin-top: 12px;
+}
+#fourthPhase .meterial .meterialWarpper .meterialRight {
+  width: 30%;
+}
+
+#fifthPhase {
+  width: 100%;
+  padding: 30px 0;
+}
+#fifthPhase .protectionPlan .protectionHeader {
+  margin-bottom: 30px;
+}
+#fifthPhase .protectionPlan .protectionHeader p {
+  margin: 6px 0;
+}
+#fifthPhase .protectionPlan .protectionHeader span a {
+  font-weight: 700;
+  color: var(--praimary);
+  text-decoration: none;
+}
+#fifthPhase .protectionPlan .cardWarpper {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  outline: 1px solid #cccccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard .imagebox {
+  width: 80px;
+  height: 80px;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard .imagebox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox {
+  width: 100%;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox .ItemHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+#fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox .ItemHeader span {
+  font-weight: 800;
+  color: var(--praimary);
+}
+#fifthPhase .protectionPlan .protectionHeading {
+  padding: 100px 0;
+}
+#fifthPhase .protectionPlan .skip {
+  margin: 50px 0;
+  text-align: center;
+  font-weight: 700;
+}
+#fifthPhase .protectionPlan .reservetion {
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--praimary);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+#fifthPhase .protectionPlan .reservetion + p {
+  text-align: center;
+  margin-top: 5px;
+}
+
 #button_fixed {
   display: block;
   width: 100%;
@@ -684,6 +974,7 @@ header nav .blank {
   left: 0;
   background-color: #6dafa4;
   padding: 20px;
+  z-index: 9;
 }
 #button_fixed .dropdown_middle {
   padding: 0 5%;
@@ -863,10 +1154,6 @@ header nav .blank {
     display: none;
     width: 20%;
   }
-  .item_warpper {
-    display: flex;
-    flex-wrap: wrap;
-  }
   #firstPhase main .buildPlan {
     margin-bottom: 20px;
   }
@@ -1038,17 +1325,82 @@ header nav .blank {
     padding: 20px 0;
   }
   #thirdPhase .container .picupWarpper .leftside .heading {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
   }
   #thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow {
+    padding: 0 20px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol li {
+    width: 45%;
+  }
+  #thirdPhase .container .picupWarpper .rightSide {
+    display: none;
+  }
+  #fourthPhase {
+    padding: 40px 0;
+  }
+  #fourthPhase .meterial .meterialWarpper {
+    width: 100%;
+    display: flex;
     gap: 50px;
   }
-  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar {
+  #fourthPhase .meterial .meterialWarpper .meterialLeft {
+    width: 100%;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .active {
+    background-color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+    width: 100%;
+    border: 1px solid var(--lightGray);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 2px 1px 4px 1px var(--lightGray);
+    transition: 0.1s all linear;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+    background-color: var(--praimary);
+    color: white;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+    margin-top: 12px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar {
     width: -moz-max-content;
     width: max-content;
     background: white;
@@ -1057,7 +1409,7 @@ header nav .blank {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
-  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .month-nav {
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .month-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1066,17 +1418,155 @@ header nav .blank {
     color: teal;
     margin-bottom: 10px;
   }
-  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days {
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days .day {
+    width: 40px;
+    height: 40px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox p {
+    font-size: 14px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol li {
+    background-color: var(--praimary);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialRight {
+    display: none;
+  }
+  #fifthPhase {
+    width: 100%;
+    padding: 30px 0;
+  }
+  #fifthPhase .protectionPlan {
+    width: 100%;
+  }
+  #fifthPhase .protectionPlan .protectionHeader {
+    margin-bottom: 30px;
+  }
+  #fifthPhase .protectionPlan .protectionHeader p {
+    margin: 6px 0;
+  }
+  #fifthPhase .protectionPlan .protectionHeader span a {
+    font-weight: 700;
+    color: var(--praimary);
+    text-decoration: none;
+  }
+  #fifthPhase .protectionPlan .cardWarpper {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    gap: 30px;
+    outline: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard .imagebox {
+    width: 80px;
+    height: 80px;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard .imagebox img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox {
+    width: 100%;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox .ItemHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  #fifthPhase .protectionPlan .cardWarpper .ItemCard .contentbox .ItemHeader span {
+    font-weight: 800;
+    color: var(--praimary);
+  }
+  #fifthPhase .protectionPlan .protectionHeading {
+    padding: 100px 0;
+  }
+  #fifthPhase .protectionPlan .skip {
+    margin: 50px 0;
+    text-align: center;
+    font-weight: 700;
+  }
+  #fifthPhase .protectionPlan .reservetion {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--praimary);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+  #fifthPhase .protectionPlan .reservetion + p {
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+/* Small Devices (Tablets, Large Phones) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .secondPhaseLeft {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #thirdPhase {
+    width: 100%;
+    padding: 20px 0;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
   #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     border: 1px solid #ccc;
     color: #aaa;
@@ -1180,13 +1670,61 @@ header nav .blank {
   #thirdPhase .container .picupWarpper .rightSide {
     display: none;
   }
-}
-/* Small Devices (Tablets, Large Phones) */
-@media (min-width: 577px) and (max-width: 768px) {
-  .secondPhaseLeft {
+  #fourthPhase {
+    padding: 40px 0;
+  }
+  #fourthPhase .meterial .meterialWarpper {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft {
+    width: 100%;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .active {
+    background-color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+    width: 100%;
+    border: 1px solid var(--lightGray);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 2px 1px 4px 1px var(--lightGray);
+    transition: 0.1s all linear;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+    background-color: var(--praimary);
+    color: white;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+    margin-top: 12px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialRight {
+    display: none;
   }
 }
 /* Medium Devices (Small Laptops, Tablets in Landscape) */
@@ -1230,6 +1768,70 @@ header nav .blank {
     max-width: 600px;
     margin: 0 auto;
   }
+  #thirdPhase {
+    width: 100%;
+    padding: 20px 0;
+  }
+  #thirdPhase .container .picupWarpper .rightSide {
+    display: none;
+  }
+  #fourthPhase {
+    padding: 40px 0;
+  }
+  #fourthPhase .meterial .meterialWarpper {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft {
+    width: 100%;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .active {
+    background-color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid var(--lightGray);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 2px 1px 4px 1px var(--lightGray);
+    transition: 0.1s all linear;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+    background-color: var(--praimary);
+    color: white;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+    margin-top: 12px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialRight {
+    display: none;
+  }
 }
 /* Large Devices (Desktops, Laptops) */
 @media (min-width: 993px) and (max-width: 1200px) {
@@ -1238,6 +1840,187 @@ header nav .blank {
   }
   #button_fixed {
     display: none;
+  }
+  #thirdPhase {
+    width: 100%;
+    padding: 20px 0;
+  }
+  #thirdPhase .container .picupWarpper {
+    width: 100%;
+    display: flex;
+  }
+  #thirdPhase .container .picupWarpper .leftside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .heading {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
+    display: flex;
+    gap: 30px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar {
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-bottom: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day {
+    width: 45px;
+    height: 45px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #fourthPhase {
+    padding: 40px 0;
+  }
+  #fourthPhase .meterial .meterialWarpper {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft {
+    width: 60%;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .active {
+    background-color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid var(--lightGray);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 2px 1px 4px 1px var(--lightGray);
+    transition: 0.1s all linear;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+    background-color: var(--praimary);
+    color: white;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+    margin-top: 12px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar {
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days .day {
+    width: 40px;
+    height: 40px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox p {
+    font-size: 14px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol li {
+    background-color: var(--praimary);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialRight {
+    width: 40%;
+    display: block;
   }
 }
 /* Extra Large Devices (Large Screens, TV) */
@@ -1519,6 +2302,272 @@ header nav .blank {
     border-radius: 4px;
     padding: 15px 10px;
     margin-top: 10px;
+  }
+  #thirdPhase {
+    width: 100%;
+    padding: 20px 0;
+  }
+  #thirdPhase .container .picupWarpper {
+    width: 100%;
+    display: flex;
+  }
+  #thirdPhase .container .picupWarpper .leftside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .heading {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper {
+    display: flex;
+    gap: 50px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar {
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-bottom: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #aaa;
+    font-size: 14px;
+    flex-direction: column;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available {
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #005157;
+    background-color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.available span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free {
+    color: var(--lightGray);
+    font-weight: bold;
+    border: 2px solid var(--lightGray);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover {
+    background-color: var(--praimary);
+    border-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.free:hover span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid {
+    border: 2px solid black;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover {
+    background-color: #005157;
+    border-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day.paid:hover span {
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .days .day span {
+    font-size: 12px;
+    color: gray;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: #ccc;
+    color: white;
+    font-size: 16px;
+    cursor: not-allowed;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .picupDate .calendar .continue-btn:hover {
+    background-color: var(--praimary);
+    color: #fff;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+    color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox p {
+    font-size: 14px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #thirdPhase .container .picupWarpper .leftside .leftsideWarpper .scheduleWarpper ol li {
+    background-color: var(--praimary);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  #thirdPhase .container .picupWarpper .rightSide {
+    display: block;
+  }
+  #fourthPhase {
+    padding: 40px 0;
+  }
+  #fourthPhase .meterial .meterialWarpper {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft {
+    width: 100%;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox {
+    width: 100%;
+    max-width: 300px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox h4 {
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .boxWarper .packagingBox:hover {
+    background-color: var(--praimary);
+    color: white;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .supplyHeading p {
+    margin-top: 12px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar {
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .month-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+    margin-bottom: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .picupDate .calendar .days .day {
+    width: 40px;
+    height: 40px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border: 2px solid var(--lightGray);
+    border-radius: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox .boxHeading span {
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox p {
+    font-size: 14px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .arivalWindow .arivalWarper .arrivalBox:hover {
+    border: 2px solid var(--praimary);
+    color: var(--praimary);
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialLeft .supplyApointment .calenderSegment .scheduleWarpper ol li {
+    background-color: var(--praimary);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+  }
+  #fourthPhase .meterial .meterialWarpper .meterialRight {
+    display: block;
   }
   #button_fixed {
     display: none;

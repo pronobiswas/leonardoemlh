@@ -449,7 +449,7 @@
                             
                                     </div>
                             
-                                    <button class="continue-btn">Continue</button>
+                                    
                                 </div>
                         </div>
                         <div class="arivalWindow">
@@ -486,6 +486,7 @@
                             </div>
                         </div>
                     </div>
+                    <button class="continueBtn" id="pickUpBtn" onclick="handlePicupBtn()">Continue</button>
                 </aside>
 
                 <aside class="rightSide">
@@ -523,6 +524,260 @@
             </div>
         </div>
       </section>
+      <!-- =====fourth phase====== -->
+       <section id="fourthPhase" class="">
+        <div class="meterial container">
+            <div class="meterialWarpper">
+                <!-- ===meterial left===== -->
+                 <div class="meterialLeft">
+                    <div class="heading">
+                        <div>
+                            <h3>Would you like packing materials?</h3>
+                            <p>We’ll send you enough to pack everything you want to store.</p>
+                        </div>
+                    </div>
+                    <div class="boxWarper">
+                        <div class="packagingBox">
+                            <h4>Yes please !</h4>
+                            <img src="./assets/box_shipping-removebg-preview.png" alt="png" width="100px" height="100px">
+                        </div>
+                        <div class="packagingBox">
+                            <h4>No thanks</h4>
+                            <img src="./assets/packegBlank-removebg-preview.png" alt="png" width="100px" height="100px">
+                        </div>
+                    </div>
+                    <div class="supplyApointment">
+                        <div class="supplyHeading">
+                            <div>
+                                <h3>Supply Apointment</h3>
+                            <p>This is when we'll drop off our speceialize packing materials, so you can easylky pack your items</p>
+                            </div>
+                            <img src="./assets/manWithbox.svg" alt="png" width="60px">
+                        </div>
+                        <div class="calenderSegment"> 
+                            <div class="picupDate">
+                                    <div class="calendar">
+                                        <div class="month-nav">
+                                            <span>&#10094;</span> 
+                                            <span>March 2025</span> 
+                                            <span>&#10095;</span>
+                                        </div>
+                                        <div class="days">
+                                            <div class="day">Mon</div>
+                                            <div class="day">Tue</div>
+                                            <div class="day">Wed</div>
+                                            <div class="day">Thu</div>
+                                            <div class="day">Fri</div>
+                                            <div class="day">Sat</div>
+                                            <div class="day">Sun</div>
+    
+                                            <div class="day">24</div>
+                                            <div class="day">25</div>
+                                            <div class="day">26</div>
+                                            <div class="day">27</div>
+                                            <div class="day">28</div>
+                                            <div class="day">1</div>
+                                            <div class="day">2</div>
+                                            <div class="day">3</div>
+                                            <div class="day">4</div>
+                                            <div class="day">5</div>
+                                            <div class="day">6</div>
+                                            <div class="day">7</div>
+                                            <div class="day">8</div>
+                                            <div class="day">9</div>
+                                            <div class="day">10</div>
+                                            <div class="day ">11</div>
+                                            <div class="day free">12<span>FREE</span></div>
+                                            <div class="day free">13 <span>FREE</span></div>
+                                            <div class="day free">14 <span>FREE</span></div>
+                                            <div class="day free">15 <span>FREE</span></div>
+                                            <div class="day paid">16 <span>$9</span></div>
+                                            <div class="day ">17</div>
+                                            <div class="day ">18</div>
+                                            <div class="day free">19 <span>FREE</span></div>
+                                            <div class="day free">20 <span>FREE</span></div>
+                                            <div class="day free">21 <span>FREE</span></div>
+                                            <div class="day free">22 <span>FREE</span></div>
+                                            <div class="day paid">23 <span>$9</span></div>
+                                            <div class="day ">24 </div>
+                                            <div class="day ">25 </div>
+                                            <div class="day free">26 <span>FREE</span></div>
+                                            <div class="day free">27 <span>FREE</span></div>
+                                            <div class="day free">28 <span>FREE</span></div>
+                                            <div class="day free">29 <span>FREE</span></div>
+                                            <div class="day paid">30 <span>$9</span></div>
+                                            <div class="day available">31 <span>FREE</span></div>
+                                            <div class="day">1</div>
+                                            <div class="day">2</div>
+                                            <div class="day">3</div>
+                                            <div class="day">4</div>
+                                            <div class="day">5</div>
+                                            <div class="day">6</div>
+                                
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="arivalWindow">
+                                <div class="arivalWarper">
+                                    <h3>Select an arrival winow</h3>
+                                    <div class="flexibleWimdow arrivalBox">
+                                        <div class="boxHeading">
+                                            <h4>Flexible Arrival</h4>
+                                            <span>Free</span>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reiciendis voluptatem beatae nulla optio ab eveniet eligendi.</p>
+                                    </div>
+                                    <div class="arrivalBox">
+                                        <div class="boxHeading">
+                                            <h4>Flexible Arrival</h4>
+                                            <span>$29</span>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                    <div class="scheduleWarpper">
+                                        <ol>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            <li class="schedule">07:00 - 18:00</li>
+                                            
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="continueBtn hidden" id="packegingContinue">continue</button>
+                 </div>
+                 <!-- ====right section==== -->
+                 <div class="meterialRight">
+                    <div class="warpperRight">
+                        <div class="product_Sumary">
+                            <h4>Due now - upfront payment</h4>
+                            <div class="editCont">
+                                <h4>Storage per month</h4> 
+                                <button id="editCount"> Edit</button>
+                            </div>
+                            <div class="itemdetails">
+                                <div class="wrap">
+                                    <button>▼</button><span>10 items</span>
+                                </div>
+                                $99.25 / mo
+                            </div>
+                            <div class="totalAmount">
+                                <span>total due today</span>
+                                <span>$99.25</span>
+                            </div>
+        
+                            <div class="returnCase">
+                                <p><span>▼</span>Return charges apply</p>
+                            </div>
+                            <p>
+                                Delivery fees are charged when you order your stuff back, <a href="#">find out more here</a>.
+                            </p>
+                            <div class="summary_note">
+                                <p>FREE to cancel or amend your order if you let us know before 11am one working day prior to your collection or delivery.</p>
+                            </div>
+        
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+       </section>
+       <!-- ====fith phase====== -->
+        <section id="fifthPhase">
+            <div class="protectionPlan container">
+                <div class="protectionHeader">
+                    <h3>Do you have any items to dispose of ?</h3>
+                    <p>Use our disposal service and check one more thing off of your to-do list</p>
+                    <span><a href="#">View Priceing and Restictions</a></span>
+                </div>
+                <!-- ---cardwarpper--- -->
+                <div class="cardWarpper">
+                    <div class="ItemCard">
+                        <div class="imagebox">
+                            <img src="./assets/clock.svg" alt="png">
+                        </div>
+                        <div class="contentbox">
+                            <div class="ItemHeader">
+                                <h4>Not now</h4>
+                                <span>$50+</span>
+                            </div>
+                            
+                            <p>You can change your mind the day of ,if anything comes up!</p>
+                        </div>
+                    </div>
+                    <div class="ItemCard">
+                        <div class="imagebox">
+                            <img src="./assets/trash.svg" alt="png">
+                        </div>
+                        <div class="contentbox">
+                            <div class="ItemHeader">
+                                <h4>Yes please</h4>
+                                <span>$50+</span>
+                            </div>
+                            
+                            <p>you can tell us about about your item s after booking to healp things go smoothly</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- =====protectionplan====   -->
+                <div class="protectionHeading">
+                     <h3>Add a protection plan?</h3>
+                     <p>Choose how much coverage you need.</p>
+                </div>
+                <!-- ---cardwarpper--- -->
+                <div class="cardWarpper">
+                    <div class="ItemCard">
+                        <div class="imagebox">
+                            <img src="./assets/protection_plan2.svg" alt="png">
+                        </div>
+                        <div class="contentbox">
+                            <div class="ItemHeader">
+                                <h4>Standard</h4>
+                                <span>$15/mo</span>
+                            </div>
+                            
+                            <p>Protects items up to $1,000.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ItemCard">
+                        <div class="imagebox">
+                            <img src="./assets/protection_plan1.svg" alt="png">
+                        </div>
+                        <div class="contentbox">
+                            <div class="ItemHeader">
+                                <h4>Premium</h4>
+                                <span>$50+</span>
+                            </div>
+                            
+                            <p>Protects items up to $2,500.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ---skip---- -->
+                <div class="skip">
+                    <input type="radio" name="" id="">
+                    <span>Skip , I don't need a protection plan</span>
+                </div>
+                <!-- --reservetion--- -->
+                <div class="reservetion">
+                    <span>Continue to Reservation</span>
+                </div>
+
+                <p>
+                    Reverse now for $0 to save your spot. Youn can change plans or reschedule anytime before your pickup appointment.
+                </p>
+            </div>
+        </section>
 
      <!-- =====fixed button======= -->
      <!-- =====fixed button======= -->
