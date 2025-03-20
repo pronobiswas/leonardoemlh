@@ -322,7 +322,7 @@ button:hover~.custom-cursor {
     gap: 40px;
 
     .itemImage {
-        width: 90px;
+        width: 90px !important;
         height: 90px;
         background-color: #00A899;
         border-radius: 50%;
@@ -334,9 +334,9 @@ button:hover~.custom-cursor {
             margin-bottom: 10px;
         }
 
-        .dimention {}
+        // .dimention {}
 
-        .price {}
+        // .price {}
     }
 
     .count {
@@ -369,6 +369,10 @@ button:hover~.custom-cursor {
 .rotateReverse {
     transform: rotate(-360deg) !important;
     transition: transform 0.3s ease-in-out;
+}
+#map {
+    height: 500px;
+    width: 100%;
 }
 
 // ===header===
@@ -411,34 +415,12 @@ header {
                     background-color: var(--praimary);
                     border: var(--praimary);
                 }
-
-                &:nth-child(2) {
-                    background-color: var(--praimary);
-                }
-
-                &:nth-child(3) {
-                    background-color: var(--praimary);
-                    border: 2px solid var(--praimary);
-                }
-
-                &:nth-child(5) {
-                    background-color: var(--praimary);
-                    border: 2px solid var(--praimary);
-                }
             }
 
             .line {
                 width: 80px;
                 height: 2px;
                 background-color: var(--lightGray);
-
-                &:nth-child(2) {
-                    background-color: var(--praimary);
-                }
-
-                &:nth-child(4) {
-                    background-color: var(--praimary);
-                }
             }
         }
 
@@ -451,7 +433,7 @@ header {
 // ===storage===
 #firstPhase {
 
-    display: none;
+    // display: none;
 
     .buildPlan {
         h1 {
@@ -692,7 +674,7 @@ header {
 // ====address=====
 #secondPhase {
 
-    display: none;
+    // display: none;
 
     .container {
         display: flex;
@@ -844,7 +826,7 @@ header {
 
 // ========pickup=====
 #thirdPhase {
-    display: none;
+    // display: none;
     width: 100%;
     padding: 20px 0;
 
@@ -1040,10 +1022,11 @@ header {
 
 // ====fourth phase====
 #fourthPhase {
-    display: none;
+    // display: none;
     padding: 40px 0;
 
     .meterial {
+
         .meterialWarpper {
             width: 100%;
             display: flex;
@@ -1094,7 +1077,7 @@ header {
 
                 .supplyApointment {
 
-                    // display: none;
+                    display: none;
                     .supplyHeading {
                         width: 100%;
                         margin: 50px 0;
@@ -1111,6 +1094,7 @@ header {
 
             .meterialRight {
                 width: 30%;
+                background-color: transparent;
             }
         }
     }
@@ -1149,6 +1133,11 @@ header {
                 outline: 1px solid #cccccc;
                 padding: 15px;
                 border-radius: 5px;
+                transition: .1s all linear;
+                cursor: pointer;
+                &:hover{
+                    box-shadow: 1px 2px 3px 4px #d6d6d6;
+                }
 
                 .imagebox {
                     width: 80px;
@@ -1441,7 +1430,7 @@ header {
             }
         }
     }
-
+    // ====first phase====
     #firstPhase {
         main {
             .buildPlan {
@@ -1451,6 +1440,7 @@ header {
             #contentWarpper {
                 .leftSection {
                     width: 100%;
+                    
                 }
 
                 .rightSection {
@@ -1466,6 +1456,22 @@ header {
 
                 .productCard {
                     width: 100%;
+                }
+            }
+        }
+        .Mattresses {
+            .warpper{
+                width: 100%;
+                #productContainer{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .productCard{
+                        width: 100%;
+                        .item_warpper{
+
+                        }
+                    }
                 }
             }
         }
@@ -1879,8 +1885,9 @@ header {
         width: 100%;
         padding: 30px 0;
 
-        .protectionPlan  {
+        .protectionPlan {
             width: 100%;
+
             .protectionHeader {
                 margin-bottom: 30px;
 
@@ -1898,68 +1905,19 @@ header {
             .cardWarpper {
                 width: 100%;
                 display: flex;
-                gap: 40px;
+                flex-direction: column;
+                gap: 20px;
 
                 .ItemCard {
                     width: 100%;
                     display: flex;
                     align-items: end;
                     gap: 30px;
-                    outline: 1px solid #cccccc;
-                    padding: 15px;
-                    border-radius: 5px;
-
-                    .imagebox {
-                        width: 80px;
-                        height: 80px;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: contain;
-                        }
-                    }
-
-                    .contentbox {
-                        width: 100%;
-
-                        .ItemHeader {
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-                            margin-bottom: 10px;
-
-                            span {
-                                font-weight: 800;
-                                color: var(--praimary);
-                            }
-                        }
-                    }
                 }
             }
 
             .protectionHeading {
-                padding: 100px 0;
-            }
-
-            .skip {
-                margin: 50px 0;
-                text-align: center;
-                font-weight: 700;
-            }
-
-            .reservetion {
-                width: 100%;
-                padding: 20px 0;
-                background-color: var(--praimary);
-                color: white;
-                text-align: center;
-                cursor: pointer;
-            }
-
-            .reservetion+p {
-                text-align: center;
-                margin-top: 5px;
+                padding: 50px 0;
             }
         }
     }

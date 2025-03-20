@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map Example</title>
+    <style>
+        /* Ensure the map is visible */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>My Google Map</h2>
+    <div id="map"></div> <!-- The map will be displayed here -->
+
+    <script>
+        function initMap() {
+            const location = { lat: 40.7128, lng: -74.0060 }; // New York
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: location,
+                zoom: 12
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <!-- Fixed API URL with &callback=initMap -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_iLHsmfxb7b8z-VqA8iT3NXnjNJyzRJU&callback=initMap"></script>
+
+</body>
+</html>
