@@ -5,16 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Map Example</title>
     <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
         /* Ensure the map is visible */
         #map {
             height: 500px;
             width: 100%;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: gray;
+            color: white;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+        button.enabled {
+            background: #28a745;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h2>My Google Map</h2>
     <div id="map"></div> <!-- The map will be displayed here -->
+
+
+    <div class="container">
+        <h2>Sign In</h2>
+        <form id="signInForm">
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <p class="error" id="emailError">Please enter a valid email</p>
+
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <p class="error" id="passwordError">Password must be at least 6 characters</p>
+
+            <button type="submit" id="submitButton" disabled>Sign In</button>
+        </form>
+    </div>
 
     <script>
         function initMap() {
@@ -28,6 +83,46 @@
                 map: map
             });
         }
+    </script>
+    <script>
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const submitButton = document.getElementById("submitButton");
+
+        function validateForm() {
+            let isValid = true;
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                document.getElementById("emailError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+            }
+
+            // Password validation (at least 6 characters)
+            if (passwordInput.value.length < 6) {
+                document.getElementById("passwordError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+            }
+
+            // Enable/disable submit button
+            submitButton.disabled = !isValid;
+            submitButton.classList.toggle("enabled", isValid);
+        }
+
+        // Event listeners for input validation
+        emailInput.addEventListener("input", validateForm);
+        passwordInput.addEventListener("input", validateForm);
+
+        // Form submission event
+        document.getElementById("signInForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual submission
+            alert("Form submitted successfully!");
+        });
     </script>
 
     <!-- Fixed API URL with &callback=initMap -->
