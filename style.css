@@ -1064,59 +1064,23 @@ header nav .blank {
   width: 100vw;
   height: calc(100vh - 80px);
   background-color: #7ae7d5;
+  padding: 30px;
 }
-#button_fixed .pullDown .secondPhaseRight {
+#button_fixed .pullDown #productSumary {
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#button_fixed .pullDown .secondPhaseRight .warpperRight {
+#button_fixed .pullDown #productSumary .summaryWarper {
   width: 100%;
+  height: 100%;
+  max-width: 550px;
+  background-color: rgba(0, 94, 89, 0.137254902);
   padding: 25px;
-  background-color: rgba(93, 255, 241, 0.1843137255);
-  border-radius: 10px;
+  border-radius: 5px;
 }
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary {
-  background: transparent;
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont {
-  margin: 10px 0 8px 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .editCont #editCount {
-  background-color: transparent;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--praimary);
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .itemdetails {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 0;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
-  padding: 10px 0;
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .totalAmount {
-  display: flex;
-  justify-content: space-between;
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .returnCase {
-  padding: 10px 0;
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary p a {
-  color: var(--praimary);
-}
-#button_fixed .pullDown .secondPhaseRight .warpperRight .product_Sumary .summary_note {
-  background-color: rgba(0, 81, 87, 0.3411764706);
-  border-radius: 4px;
-  padding: 15px 10px;
-  margin-top: 10px;
-}
-
 /* Extra Small Devices (Phones) */
 @media only screen and (max-width: 576px) {
   .item_warpper {

@@ -336,7 +336,7 @@
                                  <div class="col">
                                      <input type="text" id="postCode" name="postCode" placeholder="Postcode *" oninput="hanndleInput(event)" required>
                                  </div>
-                                 
+
                                  <textarea name="SpecialInstuction" id="SpecialInstuction" placeholder="Special instructions" cols="75" rows="4" oninput="hanndleInput(event)">
      
                                  </textarea>
@@ -797,23 +797,31 @@
       <section id="button_fixed">
         <div class="pullDown " id="fullScreenSummary">
 
-            <aside class="secondPhaseRight" >
-                <div class="warpperRight">
+            
+
+            <div id="productSumary">
+                <div class="summaryWarper">
                     <div class="product_Sumary">
                         <h4>Due now - upfront payment</h4>
                         <div class="editCont">
                             <h4>Storage per month</h4> 
                             <button id="editCount"> Edit</button>
                         </div>
+    
                         <div class="itemdetails">
-                            <div class="wrap">
-                                <button>▼</button><span>10 items</span>
+                            <div class="warper">
+                                <div class="wrap">
+                                    <button>▼</button> <span id="selectedProductLength2">0</span> <span>items</span>
+                                </div>
+                                <span id="totalPrice2">$0</span>
                             </div>
-                            $99.25 / mo
+                            <div class="productListItemButtom">
+                                
+                            </div>
                         </div>
                         <div class="totalAmount">
                             <span>total due today</span>
-                            <span>$99.25</span>
+                            <span id="totalDue2">$00.0</span>
                         </div>
     
                         <div class="returnCase">
@@ -828,7 +836,12 @@
     
                     </div>
                 </div>
-            </aside>
+
+                
+
+
+
+            </div>
             
         </div>
         <div class="dropdown_middle">
@@ -837,7 +850,7 @@
         <div class="fixedWarper">
             <div class="due">
                 <span>Total due toady</span>
-                <span class="price">$121.90</span>
+                <span class="price" id="buttomPrice">$121.90</span>
             </div>
             <button class="continue">Continue</button>
         </div>

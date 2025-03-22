@@ -172,7 +172,9 @@ fetch('https://dummyjson.com/products')
                 }
                 const calculatedPrice = calculateTotalSubtotal();
                 document.getElementById("totalPrice").innerHTML = `$ ${calculatedPrice}`;
+                document.getElementById("totalPrice2").innerHTML = `$ ${calculatedPrice}`;
                 document.getElementById("totalDue").innerHTML = `$ ${calculatedPrice}`;
+                document.getElementById("buttomPrice").innerHTML = `$ ${calculatedPrice}`;
                 
 
             });
@@ -214,7 +216,10 @@ fetch('https://dummyjson.com/products')
                 // ==show the totalvalue==
                 const calculatedPrice = calculateTotalSubtotal();
                 document.getElementById("totalPrice").innerHTML = `$ ${calculatedPrice}`;
+                document.getElementById("totalPrice2").innerHTML = `$ ${calculatedPrice}`;
                 document.getElementById("totalDue").innerHTML = `$ ${calculatedPrice}`;
+                document.getElementById("totalDue2").innerHTML = `$ ${calculatedPrice}`;
+                document.getElementById("buttomPrice").innerHTML = `$ ${calculatedPrice}`;
             });
 
             // =====view on the board====
@@ -222,9 +227,17 @@ fetch('https://dummyjson.com/products')
                 document.getElementById("selectedProductLength").innerHTML = `${selectedProduct.length}`;
 
                 const productListContainer = document.querySelector(".productListItem");
+                const productListItemButtom = document.querySelector(".productListItemButtom");
                 productListContainer.innerHTML = "";
+                productListItemButtom.innerHTML = "";
                 selectedProduct.forEach((item) => {
                     productListContainer.innerHTML += `
+                    <div class="perItem">
+                        <p>${item.title}</p>
+                        <span>$${item.subtotal.toFixed(2)}</span>
+                    </div>
+                    ` ;
+                    productListItemButtom.innerHTML += `
                     <div class="perItem">
                         <p>${item.title}</p>
                         <span>$${item.subtotal.toFixed(2)}</span>
