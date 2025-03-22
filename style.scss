@@ -71,7 +71,7 @@ button {
     outline: 2px solid #fc8c8c !important;
     -webkit-box-shadow: 0px 0px 5px 4px #ffbaba;
     -moz-box-shadow: 0px 0px 5px 4px #ffbaba;
-    box-shadow: 0px 0px 5px 4px #ffbaba;
+    box-shadow: 0px 0px 1px 2px #ffbaba;
 }
 
 // ======cursor=======
@@ -495,13 +495,39 @@ header {
         .rightSection {
             width: 40%;
             background-color: #00A899;
-
+            #productSummary{
+                .warpperRight{
+                    .product_Sumary{
+                        .itemdetails{
+                            display: flex;
+                            flex-direction: column;
+                            .warper{
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            .productListItem{
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+                                padding: 10px 0;
+                                .perItem{
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .content {}
         }
     }
 
     .commonItems {
-        // display: none;
+        
         padding: 40px 20px;
 
         .cardWarpper {
@@ -519,12 +545,20 @@ header {
     }
 
     .btnWrper {
-        padding-top: 50px;
-
+        padding: 20px ;
+        #firstPhaseWarn{
+            margin-top: 10px;
+                    padding: 0 20px;
+                    color:white;
+                    background-color: red;
+                    font-size: 14px;
+                    line-height: 40px;
+                    border-radius: 5px;
+        }
         #continueBtn {
+            margin-top: 20px;
             padding: 10px 32px;
             cursor: pointer;
-
             &:hover {
                 background: var(--praimary);
                 color: #fff;
@@ -656,7 +690,7 @@ header {
                 justify-content: space-between;
                 gap: 50px;
             }
-
+            
             .customItemBtn {
                 padding: 8px 30px;
                 font-size: 16px;
@@ -677,8 +711,13 @@ header {
                 }
             }
         }
+        
+
+
     }
 }
+
+
 
 // ====address=====
 #secondPhase {
@@ -714,6 +753,25 @@ header {
                             outline: 2px solid #b1b1b1;
                         }
                     }
+                    .selectedAreaWarper{
+                        position: relative;
+                        width: 100%;
+                        .clearSpan{
+                            position: absolute;
+                            top: 9px;
+                            right: 5px;
+                            font-size: 14px;
+                            font-weight: 700;
+                            cursor: pointer;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+
+                    }
+                    #selectedArea{
+                        padding-right: 30px;
+                    }
 
                     #hiddenFildWarper {
                         display: none;
@@ -738,6 +796,7 @@ header {
                 }
 
                 p {
+                    display: inline-block;
                     font-size: 16px;
                     font-weight: 700;
                     margin-top: 20px;
@@ -749,6 +808,16 @@ header {
                             color: var(--praimary);
                         }
                     }
+                }
+                #secondPhaseWarn{
+                    margin-top: 10px;
+                    padding: 0 20px;
+                    color:white;
+                    background-color: red;
+                    font-size: 14px;
+                    line-height: 40px;
+                    border-radius: 5px;
+
                 }
             }
 
@@ -1021,9 +1090,8 @@ header {
 
             .rightSide {
                 display: flex;
-                align-items: center;
                 justify-content: center;
-
+                align-items: start;
             }
         }
     }
@@ -2656,7 +2724,6 @@ header {
         }
 
         .commonItems {
-            display: none;
             padding: 40px 20px;
 
             .cardWarpper {

@@ -67,7 +67,7 @@ button {
 .requiredRow {
   border: 1px solid red !important;
   outline: 2px solid #fc8c8c !important;
-  box-shadow: 0px 0px 5px 4px #ffbaba;
+  box-shadow: 0px 0px 1px 2px #ffbaba;
 }
 
 .warpperRight {
@@ -411,6 +411,27 @@ header nav .blank {
   width: 40%;
   background-color: #00A899;
 }
+#firstPhase #contentWarpper .rightSection #productSummary .warpperRight .product_Sumary .itemdetails {
+  display: flex;
+  flex-direction: column;
+}
+#firstPhase #contentWarpper .rightSection #productSummary .warpperRight .product_Sumary .itemdetails .warper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#firstPhase #contentWarpper .rightSection #productSummary .warpperRight .product_Sumary .itemdetails .productListItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+}
+#firstPhase #contentWarpper .rightSection #productSummary .warpperRight .product_Sumary .itemdetails .productListItem .perItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 #firstPhase .commonItems {
   padding: 40px 20px;
 }
@@ -425,9 +446,19 @@ header nav .blank {
   width: 48%;
 }
 #firstPhase .btnWrper {
-  padding-top: 50px;
+  padding: 20px;
+}
+#firstPhase .btnWrper #firstPhaseWarn {
+  margin-top: 10px;
+  padding: 0 20px;
+  color: white;
+  background-color: red;
+  font-size: 14px;
+  line-height: 40px;
+  border-radius: 5px;
 }
 #firstPhase .btnWrper #continueBtn {
+  margin-top: 20px;
   padding: 10px 32px;
   cursor: pointer;
 }
@@ -572,6 +603,24 @@ header nav .blank {
   border: 1px solid var(--lightGray);
   outline: 2px solid #b1b1b1;
 }
+#secondPhase .container .secondPhaseLeft .formWarper form .selectedAreaWarper {
+  position: relative;
+  width: 100%;
+}
+#secondPhase .container .secondPhaseLeft .formWarper form .selectedAreaWarper .clearSpan {
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#secondPhase .container .secondPhaseLeft .formWarper form .selectedAreaWarper .clearSpan:hover {
+  text-decoration: underline;
+}
+#secondPhase .container .secondPhaseLeft .formWarper form #selectedArea {
+  padding-right: 30px;
+}
 #secondPhase .container .secondPhaseLeft .formWarper form #hiddenFildWarper {
   display: none;
 }
@@ -590,6 +639,7 @@ header nav .blank {
   width: 50%;
 }
 #secondPhase .container .secondPhaseLeft .formWarper p {
+  display: inline-block;
   font-size: 16px;
   font-weight: 700;
   margin-top: 20px;
@@ -599,6 +649,15 @@ header nav .blank {
 }
 #secondPhase .container .secondPhaseLeft .formWarper p span:hover {
   color: var(--praimary);
+}
+#secondPhase .container .secondPhaseLeft .formWarper #secondPhaseWarn {
+  margin-top: 10px;
+  padding: 0 20px;
+  color: white;
+  background-color: red;
+  font-size: 14px;
+  line-height: 40px;
+  border-radius: 5px;
 }
 #secondPhase .container .secondPhaseLeft .continue {
   padding: 6px 20px;
@@ -817,8 +876,8 @@ header nav .blank {
 }
 #thirdPhase .container .picupWarpper .rightSide {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: start;
 }
 
 #fourthPhase {
@@ -2031,7 +2090,6 @@ header nav .blank {
     background-color: #00A899;
   }
   #firstPhase .commonItems {
-    display: none;
     padding: 40px 20px;
   }
   #firstPhase .commonItems .cardWarpper {
